@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
+
     // 1. INIT LIBRARIES
     gsap.registerPlugin(ScrollTrigger);
     lucide.createIcons();
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll('.section');
     sections.forEach(section => {
         if(section.children.length > 0) {
-            gsap.fromTo(section.children, 
+            gsap.fromTo(section.children,
                 { y: 50, opacity: 0 },
                 {
                     scrollTrigger: {
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if(!statsAnimated) {
                     gsap.utils.toArray(".c-stat__num").forEach(el => {
                         const targetVal = el.getAttribute("data-val");
-                        const suffix = el.innerText.replace(/[0-9]/g, ''); 
+                        const suffix = el.innerText.replace(/[0-9]/g, '');
                         gsap.to(el, {
                             innerText: targetVal,
                             duration: 2,
@@ -121,70 +121,77 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 5. CONTACT FORM
-    const form = document.getElementById('contactForm');
-    if (form) {
-        const captchaLabel = document.getElementById('captcha-question');
-        const captchaInput = document.getElementById('captcha');
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const successMsg = document.getElementById('formSuccess');
-        const errorMsg = document.getElementById('formError');
+   // 5. CONTACT FORM
+const form = document.getElementById('contactForm');
+if (form) {
+    const captchaLabel = document.getElementById('captcha-question');
+    const captchaInput = document.getElementById('captcha');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const successMsg = document.getElementById('formSuccess');
+    const errorMsg = document.getElementById('formError');
 
-        let captchaResult = 0;
-        function initCaptcha() {
-            const num1 = Math.floor(Math.random() * 10) + 1;
-            const num2 = Math.floor(Math.random() * 10) + 1;
-            captchaResult = num1 + num2;
-            captchaLabel.innerText = `${num1} + ${num2}`;
-            captchaInput.value = '';
-        }
-        initCaptcha();
-
-        function showError(input) { input.closest('.form-group').classList.add('error'); }
-        function clearError(input) { input.closest('.form-group').classList.remove('error'); }
-        function validateEmail(email) { return String(email).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/); }
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            let isValid = true;
-            successMsg.classList.remove('active');
-            errorMsg.classList.remove('active');
-
-            const name = document.getElementById('name');
-            const email = document.getElementById('email');
-            const phone = document.getElementById('phone');
-            const agreement = document.getElementById('agreement');
-
-            if(name.value.trim() === '') { showError(name); isValid = false; } else clearError(name);
-            if(!validateEmail(email.value)) { showError(email); isValid = false; } else clearError(email);
-            if(phone.value.trim().length < 5) { showError(phone); isValid = false; } else clearError(phone);
-            if(!agreement.checked) { agreement.closest('.form-group').classList.add('error'); isValid = false; } else agreement.closest('.form-group').classList.remove('error');
-            if(parseInt(captchaInput.value) !== captchaResult) { showError(captchaInput); isValid = false; } else clearError(captchaInput);
-
-            if(!isValid) return;
-
-            submitBtn.classList.add('loading');
-            submitBtn.disabled = true;
-
-            setTimeout(() => {
-                submitBtn.classList.remove('loading');
-                submitBtn.disabled = false;
-                const isSuccess = true; 
-                if(isSuccess) {
-                    successMsg.classList.add('active');
-                    form.reset();
-                    initCaptcha();
-                    setTimeout(() => { successMsg.classList.remove('active'); }, 5000);
-                } else {
-                    errorMsg.classList.add('active');
-                }
-            }, 2000);
-        });
-
-        form.querySelectorAll('input').forEach(input => {
-            input.addEventListener('input', () => clearError(input));
-        });
+    let captchaResult = 0;
+    function initCaptcha() {
+        const num1 = Math.floor(Math.random() * 10) + 1;
+        const num2 = Math.floor(Math.random() * 10) + 1;
+        captchaResult = num1 + num2;
+        captchaLabel.innerText = `${num1} + ${num2}`;
+        captchaInput.value = '';
     }
+    initCaptcha();
+
+    function showError(input) { input.closest('.form-group').classList.add('error'); }
+    function clearError(input) { input.closest('.form-group').classList.remove('error'); }
+    function validateEmail(email) {
+        return String(email).toLowerCase().match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+    }
+    function validatePhone(phone) {
+        return /^\+?\d{5,15}$/.test(phone.trim());
+    }
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let isValid = true;
+        successMsg.classList.remove('active');
+        errorMsg.classList.remove('active');
+
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const phone = document.getElementById('phone');
+        const agreement = document.getElementById('agreement');
+
+        if(name.value.trim() === '') { showError(name); isValid = false; } else clearError(name);
+        if(!validateEmail(email.value)) { showError(email); isValid = false; } else clearError(email);
+        if(!validatePhone(phone.value)) { showError(phone); isValid = false; } else clearError(phone);
+        if(!agreement.checked) { agreement.closest('.form-group').classList.add('error'); isValid = false; } else agreement.closest('.form-group').classList.remove('error');
+        if(parseInt(captchaInput.value) !== captchaResult) { showError(captchaInput); isValid = false; } else clearError(captchaInput);
+
+        if(!isValid) return;
+
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+            submitBtn.classList.remove('loading');
+            submitBtn.disabled = false;
+            const isSuccess = true;
+            if(isSuccess) {
+                successMsg.classList.add('active');
+                form.reset();
+                initCaptcha();
+                setTimeout(() => { successMsg.classList.remove('active'); }, 5000);
+            } else {
+                errorMsg.classList.add('active');
+            }
+        }, 2000);
+    });
+
+    form.querySelectorAll('input').forEach(input => {
+        input.addEventListener('input', () => clearError(input));
+    });
+}
 
     // 6. COOKIE POPUP
     const cookiePopup = document.getElementById('cookiePopup');
