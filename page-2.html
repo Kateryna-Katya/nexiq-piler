@@ -5,29 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page 2</title>
-    <link rel="stylesheet" crossorigin href="/test-two/assets/styles-guStct1H.css">
+    <link rel="stylesheet" crossorigin href="/nexiq-piler/assets/styles-rR8XCIJo.css">
   </head>
   <body>
     <header class="header">
-  <div class="container">
-    <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="{=$icon-path}"></use>
-        </svg>
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
-        </li>
+  <div class="container header__container">
+    <a href="#" class="header__logo">Nexiq-Piler</a>
+
+    <nav class="header__nav" id="nav-menu">
+      <ul class="header__list">
+        <li><a href="#" class="header__link">Главная</a></li>
+        <li><a href="#about" class="header__link">О платформе</a></li>
+        <li><a href="#services" class="header__link">Решения</a></li>
+        <li><a href="#innovations" class="header__link">Инновации</a></li>
+        <li><a href="#blog" class="header__link">Блог</a></li>
+        <li><a href="#career" class="header__link">Карьера</a></li>
+        <li><a href="#faq" class="header__link">FAQ</a></li>
+        <li><a href="#contact" class="header__link header__link--cta">Контакты</a></li>
       </ul>
+      <button class="header__close" aria-label="Close menu">
+        <i data-lucide="x"></i>
+      </button>
     </nav>
+
+    <button class="header__burger" aria-label="Open menu">
+      <i data-lucide="menu"></i>
+    </button>
   </div>
 </header>
-
 
     <main>
       <div class="container">
@@ -38,20 +43,65 @@
     </main>
 
     <footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT team
-      </a>
-    </p>
+  <div class="container footer__container">
+    <div class="footer__col">
+      <a href="#" class="footer__logo">Nexiq-Piler</a>
+      <p class="footer__desc">
+        Технология нового поколения для вашего бизнеса.
+        Воплотите мечты в реальность с экспертной поддержкой на всех этапах.
+      </p>
+      <div class="footer__socials">
+        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+        <a href="#" aria-label="Linkedin"><i data-lucide="linkedin"></i></a>
+        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h3 class="footer__title">Навигация</h3>
+      <ul class="footer__links">
+        <li><a href="#">Главная</a></li>
+        <li><a href="#about">О нас</a></li>
+        <li><a href="#innovations">Стратегия роста</a></li>
+        <li><a href="#blog">Блог</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h3 class="footer__title">Правовая информация</h3>
+      <ul class="footer__links">
+        <li><a href="privacy.html">Политика конфиденциальности</a></li>
+        <li><a href="cookies.html">Cookie политика</a></li>
+        <li><a href="terms.html">Условия использования</a></li>
+        <li><a href="return.html">Политика возврата</a></li>
+        <li><a href="disclaimer.html">Отказ от ответственности</a></li>
+        <li><a href="personal-data-policy.html">Обработка данных</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h3 class="footer__title">Контакты</h3>
+      <address class="footer__contacts">
+        <p class="footer__item">
+          <i data-lucide="map-pin"></i>
+          <span>Friedrichstraße 123, 10117 Berlin, Germany</span>
+        </p>
+        <p class="footer__item">
+          <i data-lucide="phone"></i>
+          <a href="tel:+493012345678">+49 30 123 456 78</a>
+        </p>
+        <p class="footer__item">
+          <i data-lucide="mail"></i>
+          <a href="mailto:hello@nexiq-piler.skin">hello@nexiq-piler.skin</a>
+        </p>
+      </address>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container">
+      <p>&copy; 2024 Nexiq-Piler. Все права защищены. Предложение активно только в странах ЕС.</p>
+    </div>
   </div>
 </footer>
-
   </body>
 </html>
