@@ -16,9 +16,12 @@
     href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Oswald:wght@400;500;700&display=swap"
     rel="stylesheet">
 
-  <script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
     <script type="module" crossorigin src="/nexiq-piler/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/nexiq-piler/assets/styles-rR8XCIJo.css">
+    <link rel="stylesheet" crossorigin href="/nexiq-piler/assets/styles-BaKG7div.css">
   </head>
   <body>
     <header class="header">
@@ -49,7 +52,336 @@
 
     <main class="main" id="main-content">
       <!-- Loads the specified .html file -->
-      
+      <section class="hero" id="hero">
+    <div class="hero__bg">
+        <div class="hero__overlay"></div>
+        <img src="img/placeholder.png" alt="Digital abstract background" class="hero__video-placeholder"
+            style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+
+    <div class="container hero__container">
+        <div class="hero__content">
+            <div class="hero__label fade-in">
+                <i data-lucide="zap" class="hero__label-icon"></i>
+                <span>Платформа уже доступна в Европе</span>
+            </div>
+
+            <h1 class="hero__title split-text">
+                Передовая цифровая инфраструктура <br> для вашего роста
+            </h1>
+
+            <p class="hero__subtitle fade-in">
+                Воплотите мечты в реальность. Технология нового поколения, которая меняет правила игры в консалтинге.
+                Стратегия роста на базе инноваций.
+            </p>
+
+            <div class="hero__actions fade-in-up">
+                <a href="#contact" class="btn btn--primary">
+                    Начать сейчас
+                    <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="#innovations" class="btn btn--outline">
+                    Узнать детали
+                </a>
+            </div>
+
+            <div class="hero__stats fade-in-up">
+                <div class="hero__stat-item">
+                    <i data-lucide="shield-check"></i>
+                    <span>Проверенный партнер в EU</span>
+                </div>
+                <div class="hero__stat-item">
+                    <i data-lucide="clock"></i>
+                    <span>Быстрый и лёгкий старт</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="section about">
+    <div class="container about__container">
+        <div class="about__content">
+            <span class="section-tag">О платформе</span>
+            <h2 class="section-title">Переосмыслите подход <br> к развитию бизнеса</h2>
+            <p class="about__text">
+                Nexiq-Piler — это не просто консалтинг. Это экосистема, где традиционные методологии встречаются с
+                инновационными технологиями. Мы помогаем проектам масштабироваться на рынках Европы.
+            </p>
+            <ul class="about__list">
+                <li><i data-lucide="check-circle-2"></i><span>Экспертная поддержка на всех этапах</span></li>
+                <li><i data-lucide="check-circle-2"></i><span>Методологии, доказавшие эффективность</span></li>
+                <li><i data-lucide="check-circle-2"></i><span>Прозрачная стратегия роста</span></li>
+            </ul>
+            <a href="#contact" class="btn btn--primary about__btn">Бесплатная консультация</a>
+        </div>
+        <div class="about__image-wrapper">
+            <div class="about__image-inner">
+                <img src="img/placeholder.png" alt="Business consulting" class="about__img">
+            </div>
+            <div class="about__card floating">
+                <i data-lucide="trending-up" class="about__card-icon"></i>
+                <div>
+                    <span class="about__card-title">+250%</span>
+                    <span class="about__card-desc">Рост эффективности</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="section services">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="section-tag">Наши Решения</span>
+            <h2 class="section-title">Технологии, которые <br> работают на вас</h2>
+        </div>
+        <div class="services__grid">
+            <div class="service-card">
+                <div class="service-card__icon"><i data-lucide="bar-chart-2"></i></div>
+                <h3 class="service-card__title">Стратегический анализ</h3>
+                <p class="service-card__desc">Глубокий аудит вашего проекта и поиск точек роста.</p>
+                <a href="#contact" class="service-card__link">Подробнее <i data-lucide="arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="service-card__icon"><i data-lucide="cpu"></i></div>
+                <h3 class="service-card__title">Цифровая трансформация</h3>
+                <p class="service-card__desc">Внедрение передовой цифровой инфраструктуры.</p>
+                <a href="#contact" class="service-card__link">Подробнее <i data-lucide="arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="service-card__icon"><i data-lucide="globe"></i></div>
+                <h3 class="service-card__title">Масштабирование в EU</h3>
+                <p class="service-card__desc">Юридическая и маркетинговая поддержка для Англии и ЕС.</p>
+                <a href="#contact" class="service-card__link">Подробнее <i data-lucide="arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="innovations" class="section innovations dark-section">
+    <div class="container">
+        <div class="innovations__wrapper">
+            <div class="innovations__info">
+                <span class="section-tag section-tag--light">Инновации</span>
+                <h2 class="section-title text-white">Технология нового поколения</h2>
+                <p class="innovations__text">
+                    Мы используем проприетарные алгоритмы для прогнозирования рыночных трендов. Будьте на шаг впереди.
+                </p>
+                <div class="innovations__features">
+                    <div class="inn-feature">
+                        <h4 class="inn-feature__title">AI-инструменты</h4>
+                        <p>Для реальных задач и автоматизации.</p>
+                    </div>
+                    <div class="inn-feature">
+                        <h4 class="inn-feature__title">Big Data</h4>
+                        <p>Анализ массивов данных для точных решений.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="innovations__visual">
+                <div class="inn-circle-container">
+                    <div class="inn-circle inn-circle--1"></div>
+                    <div class="inn-circle inn-circle--2"></div>
+                    <div class="inn-circle inn-circle--3"></div>
+                    <div class="inn-content">
+                        <i data-lucide="layers"></i>
+                        <span>Nexiq Core</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="blog" class="section blog">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Инсайты и тренды</h2>
+            <a href="#contact" class="link-arrow">Все статьи <i data-lucide="arrow-right"></i></a>
+        </div>
+        <div class="blog__grid">
+            <article class="blog-card">
+                <div class="blog-card__image">
+                    <img src="img/placeholder.png" alt="Blog post 1">
+                    <span class="blog-card__category">Стратегия</span>
+                </div>
+                <div class="blog-card__content">
+                    <span class="blog-card__date">12 Окт 2024</span>
+                    <h3 class="blog-card__title">Как оценить перспективы проекта за 24 часа?</h3>
+                    <a href="#contact" class="blog-card__link">Читать далее</a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <div class="blog-card__image">
+                    <img src="img/placeholder.png" alt="Blog post 2">
+                    <span class="blog-card__category">Технологии</span>
+                </div>
+                <div class="blog-card__content">
+                    <span class="blog-card__date">08 Окт 2024</span>
+                    <h3 class="blog-card__title">Технологии для пассивного дохода: миф или реальность?</h3>
+                    <a href="#contact" class="blog-card__link">Читать далее</a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <div class="blog-card__image">
+                    <img src="img/placeholder.png" alt="Blog post 3">
+                    <span class="blog-card__category">Карьера</span>
+                </div>
+                <div class="blog-card__content">
+                    <span class="blog-card__date">01 Окт 2024</span>
+                    <h3 class="blog-card__title">Постройте карьеру, которая работает на вас</h3>
+                    <a href="#contact" class="blog-card__link">Читать далее</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section id="career" class="section career">
+    <div class="container career__container">
+        <div class="career__content">
+            <span class="section-tag">Карьера</span>
+            <h2 class="section-title">Откройте новые <br> возможности</h2>
+            <p class="career__text">
+                Присоединяйтесь к команде, которая создает будущее цифрового консалтинга. Легко разобраться без опыта
+                благодаря нашей системе менторства.
+            </p>
+            <div class="career__stats">
+                <div class="c-stat">
+                    <span class="c-stat__num" data-val="150">0+</span>
+                    <span class="c-stat__desc">Экспертов</span>
+                </div>
+                <div class="c-stat">
+                    <span class="c-stat__num" data-val="12">0</span>
+                    <span class="c-stat__desc">Стран</span>
+                </div>
+                <div class="c-stat">
+                    <span class="c-stat__num" data-val="98">0%</span>
+                    <span class="c-stat__desc">Успешных кейсов</span>
+                </div>
+            </div>
+        </div>
+        <div class="career__cta">
+            <div class="cta-box">
+                <h3>Готовы начать?</h3>
+                <p>Отправьте заявку и получите доступ к вводным материалам.</p>
+                <a href="#contact" class="btn btn--white">Присоединиться</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="faq" class="section faq">
+    <div class="container faq__container">
+        <div class="section-header text-center">
+            <h2 class="section-title">Частые вопросы</h2>
+            <p class="section-desc">Поддержка по всем вопросам 24/7</p>
+        </div>
+        <div class="faq__wrapper">
+            <div class="faq__item">
+                <button class="faq__trigger"><span>Как быстро можно начать?</span><i
+                        data-lucide="chevron-down"></i></button>
+                <div class="faq__content">
+                    <div class="faq__body">Подключение занимает 2 минуты. У нас предусмотрен быстрый и лёгкий старт.
+                    </div>
+                </div>
+            </div>
+            <div class="faq__item">
+                <button class="faq__trigger"><span>Доступна ли платформа в моей стране?</span><i
+                        data-lucide="chevron-down"></i></button>
+                <div class="faq__content">
+                    <div class="faq__body">Предложение активно только в странах ЕС (включая Англию).</div>
+                </div>
+            </div>
+            <div class="faq__item">
+                <button class="faq__trigger"><span>Нужен ли опыт в консалтинге?</span><i
+                        data-lucide="chevron-down"></i></button>
+                <div class="faq__content">
+                    <div class="faq__body">Нет, опыт не обязателен. Наши методологии разработаны для новичков.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section contact">
+    <div class="container contact__container">
+        <div class="contact__info">
+            <span class="section-tag">Контакты</span>
+            <h2 class="section-title">Начните свой путь <br> прямо сейчас</h2>
+            <p class="contact__desc">
+                Заполните форму, и наш эксперт свяжется с вами в течение 24 часов.
+            </p>
+            <div class="contact__details">
+                <div class="c-detail">
+                    <i data-lucide="mail"></i>
+                    <div>
+                        <span class="c-label">Email</span>
+                        <a href="mailto:support@nexiq-piler.skin">support@nexiq-piler.skin</a>
+                    </div>
+                </div>
+                <div class="c-detail">
+                    <i data-lucide="phone"></i>
+                    <div>
+                        <span class="c-label">Телефон</span>
+                        <a href="tel:+493012345678">+49 30 123 456 78</a>
+                    </div>
+                </div>
+                <div class="c-detail">
+                    <i data-lucide="map-pin"></i>
+                    <div>
+                        <span class="c-label">Офис</span>
+                        <span>Friedrichstraße 123, 10117 Berlin</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact__form-wrapper">
+            <form id="contactForm" class="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" placeholder="Иван Петров" required>
+                    <span class="error-msg">Пожалуйста, введите имя</span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+                    <span class="error-msg">Введите корректный email</span>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+49..." required>
+                    <span class="error-msg">Введите номер телефона</span>
+                </div>
+                <div class="form-group captcha-group">
+                    <label for="captcha">Сколько будет <span id="captcha-question"></span>?</label>
+                    <input type="number" id="captcha" name="captcha" placeholder="Ответ" required>
+                    <span class="error-msg">Неверный ответ</span>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="agreement" name="agreement" required>
+                    <label for="agreement">Я согласен с <a href="personal-data-policy.html" target="_blank">политикой
+                            обработки данных</a></label>
+                    <span class="error-msg checkbox-error">Требуется согласие</span>
+                </div>
+                <button type="submit" class="btn btn--primary form-btn">
+                    <span class="btn-text">Отправить заявку</span>
+                    <span class="btn-loader"></span>
+                </button>
+                <div class="form-status success" id="formSuccess">
+                    <i data-lucide="check-circle"></i>
+                    <p>Заявка успешно отправлена!</p>
+                </div>
+                <div class="form-status error" id="formError">
+                    <i data-lucide="alert-circle"></i>
+                    <p>Ошибка. Попробуйте позже.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
     </main>
 
     <footer class="footer">
@@ -109,10 +441,21 @@
   </div>
   <div class="footer__bottom">
     <div class="container">
-      <p>&copy; 2024 Nexiq-Piler. Все права защищены. Предложение активно только в странах ЕС.</p>
+      <p>&copy; 2025 Nexiq-Piler. Все права защищены. Предложение активно только в странах ЕС.</p>
     </div>
   </div>
 </footer>
+    <div id="cookiePopup" class="cookie-popup">
+      <div class="cookie-content">
+        <div class="cookie-text">
+          <h3>Мы используем Cookies 🍪</h3>
+          <p>Этот сайт использует файлы cookies. Подробнее — в <a href="cookies.html">Cookie политике</a>.</p>
+        </div>
+        <div class="cookie-actions">
+          <button id="acceptCookies" class="btn btn--primary btn--sm">Принять</button>
+        </div>
+      </div>
+    </div>
 <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
 <script src="script.js"></script>
     <script>
