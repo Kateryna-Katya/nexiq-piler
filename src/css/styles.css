@@ -1134,3 +1134,119 @@ img {
         gap: 15px;
     }
 }
+/* =========================================
+   TEXT PAGES STYLES (Privacy, Terms, Cookies)
+   ========================================= */
+
+.pages {
+    padding-top: 140px;
+    /* Отступ под фиксированным хедером */
+    background-color: var(--color-white);
+    max-width: 900px;
+    /* Ограничиваем ширину текста для удобства чтения */
+    margin: 0 auto;
+}
+
+.pages h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 30px;
+    line-height: 1.1;
+    color: var(--color-primary);
+}
+
+.pages h2 {
+    font-size: 1.8rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: var(--color-dark);
+    border-left: 4px solid var(--color-primary);
+    padding-left: 15px;
+}
+
+.pages p {
+    font-size: 1.05rem;
+    color: var(--color-text);
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.pages .lead-text {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-text-light);
+    margin-bottom: 40px;
+}
+
+.divider {
+    border: none;
+    height: 1px;
+    background: #E5E7EB;
+    margin: 40px 0;
+}
+
+/* Списки на текстовых страницах */
+.styled-list {
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.styled-list li {
+    position: relative;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    color: var(--color-text);
+}
+
+/* Маркеры для списков */
+ul.styled-list li::before {
+    content: "•";
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    left: -15px;
+    top: -5px;
+}
+
+ol.styled-list {
+    counter-reset: item;
+    list-style: none;
+}
+
+ol.styled-list li {
+    counter-increment: item;
+}
+
+ol.styled-list li::before {
+    content: counter(item) ".";
+    color: var(--color-primary);
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    position: absolute;
+    left: -25px;
+    top: 0;
+}
+
+/* Ссылки в тексте */
+.link-highlight {
+    color: var(--color-primary);
+    font-weight: 700;
+    border-bottom: 2px solid rgba(46, 125, 50, 0.2);
+    transition: var(--transition);
+}
+
+.link-highlight:hover {
+    border-bottom-color: var(--color-primary);
+    color: var(--color-primary-dark);
+}
+
+/* Адаптив для страниц */
+@media (max-width: 768px) {
+    .pages {
+        padding-top: 100px;
+    }
+
+    .pages h2 {
+        font-size: 1.5rem;
+    }
+}
